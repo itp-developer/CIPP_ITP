@@ -19,7 +19,12 @@ const FormattingShowcase = ({ cases }) => (
           <TableRow key={`${cellName}-${i}`}>
             <TableCell>
               <Typography variant="caption" sx={{ fontFamily: 'monospace' }}>{cellName}</Typography>
-              {description && <Typography variant="caption" display="block" color="text.secondary">{description}</Typography>}
+              {description && <Typography
+                variant="caption"
+                sx={{
+                  display: "block",
+                  color: "text.secondary"
+                }}>{description}</Typography>}
             </TableCell>
             <TableCell>
               <Typography variant="caption" sx={{ fontFamily: 'monospace', maxWidth: 200, display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
@@ -148,7 +153,7 @@ export const Booleans = {
       await expect(canvasElement.textContent).toContain('Yes')
       await expect(canvasElement.textContent).toContain('No')
       expect(canvasElement.querySelector('[data-testid="CheckIcon"]')).not.toBeNull()
-      expect(canvasElement.querySelector('[data-testid="CancelIcon"]')).not.toBeNull()
+      expect(canvasElement.querySelector('[data-testid="CloseIcon"]')).not.toBeNull()
     })
 
     await step('enabled+date renders the scheduled variant', async () => {
